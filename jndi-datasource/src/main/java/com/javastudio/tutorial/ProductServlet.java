@@ -16,7 +16,7 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("Forwarding to product.jsp");
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/product.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/view/product/insert.jsp");
         dispatcher.forward(req, resp);
     }
 
