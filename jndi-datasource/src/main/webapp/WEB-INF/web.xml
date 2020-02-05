@@ -11,6 +11,6 @@
     
     <servlet-mapping>
         <servlet-name>Product Servlet</servlet-name>
-        <url-pattern>/test</url-pattern>
+        <url-pattern>/product</url-pattern>
     </servlet-mapping>
 </web-app>
