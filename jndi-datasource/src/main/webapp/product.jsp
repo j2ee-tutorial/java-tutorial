@@ -7,6 +7,8 @@
 
 <h1>Product Entry</h1>
 
+<label>Id: <%=request.getParameter("id")%></label>
+
 <form>
 
 </form>
