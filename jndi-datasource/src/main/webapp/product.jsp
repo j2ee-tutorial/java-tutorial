@@ -5,7 +5,11 @@
 </head>
 <body>
 
-<h1>Hello</h1>
+<h1>Product Entry</h1>
+
+<form>
+
+</form>
 
 </body>
 </html>
