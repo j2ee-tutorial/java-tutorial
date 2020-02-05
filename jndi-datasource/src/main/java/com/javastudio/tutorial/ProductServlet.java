@@ -18,7 +18,6 @@ public class ProductServlet extends HttpServlet {
         logger.info("Forwarding to product.jsp");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/product.jsp");
         dispatcher.forward(req, resp);
-
     }
 
     @Override
