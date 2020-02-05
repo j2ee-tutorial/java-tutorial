@@ -5,12 +5,12 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>X</servlet-name>
-        <servlet-class>com.javastudio.tutorial.XServlet</servlet-class>
+        <servlet-name>Product Servlet</servlet-name>
+        <servlet-class>com.javastudio.tutorial.ProductServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>X</servlet-name>
+        <servlet-name>Product Servlet</servlet-name>
         <url-pattern>/test</url-pattern>
     </servlet-mapping>
 </web-app>
