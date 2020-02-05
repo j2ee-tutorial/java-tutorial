@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>Product Servlet</servlet-name>
-        <servlet-class>com.javastudio.tutorial.controller.ProductServlet</servlet-class>
+        <servlet-class>com.javastudio.tutorial.web.controller.ProductServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
