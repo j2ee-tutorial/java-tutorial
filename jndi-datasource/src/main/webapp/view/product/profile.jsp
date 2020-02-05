@@ -12,5 +12,7 @@
 </head>
 <body>
 
+<h1>PRODUCT DETAIL</h1>
+
 </body>
 </html>

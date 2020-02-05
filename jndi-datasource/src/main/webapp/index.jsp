@@ -7,9 +7,9 @@
 
 <h1>Project Index</h1>
 
-<a href="<%=request.getContextPath()%>/product">Product</a>
+<a href="<%=request.getContextPath()%>/product">Product</a><p>(entry page using absolute address)</p>
 <br/>
-<a href="product">Product</a>
+<a href="product">Product</a><p>(entry page using relative address)</p>
 
 </body>
 </html>

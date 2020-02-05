@@ -1,4 +1,4 @@
-package com.javastudio.tutorial;
+package com.javastudio.tutorial.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
