@@ -12,4 +12,14 @@ public class HelloWorld {
         String message = "<h1>Hello world!</h1>";
         return new ModelAndView("welcome", "message", message);
     }
+
+    @RequestMapping(value = "/welcome1", method = RequestMethod.GET)
+    public ModelAndView welcome1() {
+
+        ModelAndView view = new ModelAndView("welcome");
+
+        String message = "<h1>Hello world!</h1>";
+        view.addObject("message", message);
+        return view;
+    }
 }
