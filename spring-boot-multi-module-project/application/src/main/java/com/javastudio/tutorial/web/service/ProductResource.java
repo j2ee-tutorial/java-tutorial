@@ -1,7 +1,7 @@
 package com.javastudio.tutorial.web.service;
 
+import com.javastudio.tutorial.api.ProductService;
 import com.javastudio.tutorial.component.MyComponent;
-import com.javastudio.tutorial.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
