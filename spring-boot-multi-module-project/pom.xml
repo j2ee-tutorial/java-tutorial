@@ -18,12 +18,22 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>application</module>
+        <module>api</module>
         <module>service</module>
+        <module>application</module>
     </modules>
 
     <build>
-
+        <plugins>
+            <!-- mvn -pl app-module -am spring-boot:run -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
