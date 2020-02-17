@@ -3,6 +3,7 @@ package com.javastudio.tutorial.web.controller;
 import com.javastudio.tutorial.web.model.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -38,12 +40,17 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(@ModelAttribute Product product, Model model) {
+    public String save(@Valid @ModelAttribute Product product, BindingResult validation, Model model) {
         logger.info("Saving product");
-        logger.info(product.getName());
-        PRODUCTS.add(product);
-        logger.info("Number of products: " + PRODUCTS.size());
-        model.addAttribute("message", "Product saved successfully");
+        logger.info("Name: " + product.getName());
+        if (!validation.hasErrors()) {
+            PRODUCTS.add(product);
+            logger.info("Number of products: " + PRODUCTS.size());
+            model.addAttribute("message", "Product saved successfully");
+        } else {
+            logger.warning(validation.toString());
+            model.addAttribute("message", "Product is not valid. Please see the log for details.");
+        }
         model.addAttribute("products", PRODUCTS);
         return "product/index";
     }
