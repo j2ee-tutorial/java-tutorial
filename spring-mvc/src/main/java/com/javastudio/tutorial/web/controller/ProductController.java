@@ -3,6 +3,7 @@ package com.javastudio.tutorial.web.controller;
 import com.javastudio.tutorial.web.model.Product;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,11 +20,13 @@ public class ProductController {
     private static final Logger logger = Logger.getLogger(ProductController.class.getName());
 
     @RequestMapping(value = "/entry", method = RequestMethod.GET)
-    public String entry() {
+    public String entry(Model model) {
+        Product product = new Product();
+        model.addAttribute("product", product);
         return "product/insert";
     }
 
-    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    // @RequestMapping(value = "/entry", method = RequestMethod.GET)
     public ModelAndView entry(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("product/insert");
         view.addObject("product", new Product());
@@ -31,8 +34,9 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(@RequestParam String name, Model model) {
-        logger.info("name: " + name);
+    public String save(@ModelAttribute Product product, Model model) {
+        logger.info("Saving product");
+        logger.info(product.getName());
         model.addAttribute("message", "Product saved successfully");
         return "product/index";
     }

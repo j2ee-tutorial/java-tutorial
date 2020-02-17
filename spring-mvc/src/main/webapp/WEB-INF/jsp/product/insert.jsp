@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>New Product</title>
@@ -9,12 +10,10 @@
 </header>
 
 <main>
-    <form action="${pageContext.request.contextPath}/product/save" method="post">
-        <label for="name"></label>
-        <input type="text" name="name" id="name">
-
+    <form:form action="save" method="post" modelAttribute="product">
+        Name: <form:input path="name"/>
         <input type="submit" value="save">
-    </form>
+    </form:form>
 </main>
 
 <footer>
