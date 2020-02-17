@@ -12,8 +12,8 @@
 <main>
     <a href="login">Show login form</a><br/>
 
-    <a href="product">Add new product</a><br/>
-    <a href="product/list">Show product list</a><br/>
+    <a href="${pageContext.request.contextPath}/product/entry">Add new product</a><br/>
+    <a href="${pageContext.request.contextPath}/product/list">Show product list</a><br/>
 </main>
 
 <footer>

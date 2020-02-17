@@ -9,7 +9,7 @@
 </header>
 
 <main>
-    <form action="product" method="post">
+    <form action="${pageContext.request.contextPath}/product/save" method="post">
         <label for="name"></label>
         <input type="text" name="name" id="name">
 

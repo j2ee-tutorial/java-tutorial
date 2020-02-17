@@ -12,39 +12,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.logging.Logger;
 
+@RequestMapping("/product")
 @Controller
 public class ProductController {
 
-    Logger logger = Logger.getLogger(ProductController.class.getName());
+    private static final Logger logger = Logger.getLogger(ProductController.class.getName());
 
-    @RequestMapping(value = "/product", method = RequestMethod.GET)
+    @RequestMapping(value = "/entry", method = RequestMethod.GET)
     public String entry() {
         return "product/insert";
     }
 
-    @RequestMapping(value = "/product/entry", method = RequestMethod.GET)
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public ModelAndView entry(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("product/insert");
         view.addObject("product", new Product());
         return view;
     }
 
-    // Traditional form
-    // @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String save(HttpServletRequest request, Model model) {
-        logger.info("name: " + request.getParameter("name"));
-        model.addAttribute("message", "Product saved successfully");
-        return "product/index";
-    }
-
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(@RequestParam String name, Model model) {
         logger.info("name: " + name);
         model.addAttribute("message", "Product saved successfully");
         return "product/index";
     }
 
-    @RequestMapping(value = "/product/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index() {
         return "product/index";
     }
