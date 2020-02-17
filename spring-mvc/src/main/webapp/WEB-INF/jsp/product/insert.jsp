@@ -14,6 +14,8 @@
         Name: <form:input path="name"/>
         <input type="submit" value="save">
     </form:form>
+
+    <a href="${pageContext.request.contextPath}/product/list">Cancel</a>
 </main>
 
 <footer>

@@ -37,6 +37,8 @@
         </tbody>
     </table>
 
+    <a href="${pageContext.request.contextPath}/product/entry">Add</a>
+
 </main>
 
 <footer>
