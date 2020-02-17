@@ -11,6 +11,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 @RequestMapping("/product")
@@ -18,6 +20,8 @@ import java.util.logging.Logger;
 public class ProductController {
 
     private static final Logger logger = Logger.getLogger(ProductController.class.getName());
+
+    private static final List<Product> PRODUCTS = new ArrayList<>();
 
     @RequestMapping(value = "/entry", method = RequestMethod.GET)
     public String entry(Model model) {
@@ -37,12 +41,17 @@ public class ProductController {
     public String save(@ModelAttribute Product product, Model model) {
         logger.info("Saving product");
         logger.info(product.getName());
+        PRODUCTS.add(product);
+        logger.info("Number of products: " + PRODUCTS.size());
         model.addAttribute("message", "Product saved successfully");
+        model.addAttribute("products", PRODUCTS);
         return "product/index";
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index() {
+    public String index(Model model) {
+        logger.info("Number of products: " + PRODUCTS.size());
+        model.addAttribute("products", PRODUCTS);
         return "product/index";
     }
 }
