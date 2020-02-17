@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,9 +29,17 @@ public class ProductController {
         return view;
     }
 
-    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    // Traditional form
+    // @RequestMapping(value = "/product", method = RequestMethod.POST)
     public String save(HttpServletRequest request, Model model) {
         logger.info("name: " + request.getParameter("name"));
+        model.addAttribute("message", "Product saved successfully");
+        return "product/index";
+    }
+
+    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    public String save(@RequestParam String name, Model model) {
+        logger.info("name: " + name);
         model.addAttribute("message", "Product saved successfully");
         return "product/index";
     }
