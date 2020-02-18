@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,10 +15,16 @@
 <body>
 
 <header>
-    <h1>Products</h1>
+    <div>
+        <a href="${pageContext.request.contextPath}/product/list?lang=en">En</a>
+        <a href="${pageContext.request.contextPath}/product/list?lang=fa">Fa</a>
+    </div>
+
+    <h1><spring:message code="products"/> </h1>
 </header>
 
 <main>
+    <%=request.getParameter("lang")%>
     ${message}
 
     <table>
