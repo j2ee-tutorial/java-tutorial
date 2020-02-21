@@ -1,6 +1,6 @@
 package com.javastudio.tutorial.web.controller;
 
-import com.javastudio.tutorial.model.Product1;
+import com.javastudio.tutorial.model.Product;
 import com.javastudio.tutorial.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,7 @@ public class ProductController {
 
     @RequestMapping(value = "/entry", method = RequestMethod.GET)
     public String entry(Model model) {
-        Product1 product = new Product1();
+        Product product = new Product();
         model.addAttribute("product", product);
         return "product/insert";
     }
@@ -34,12 +34,12 @@ public class ProductController {
     // @RequestMapping(value = "/entry", method = RequestMethod.GET)
     public ModelAndView entry(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView view = new ModelAndView("product/insert");
-        view.addObject("product", new Product1());
+        view.addObject("product", new Product());
         return view;
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute Product1 product, BindingResult validation, Model model) {
+    public String save(@Valid @ModelAttribute Product product, BindingResult validation, Model model) {
         logger.info("Saving product");
         logger.info("Name: " + product.getName());
         if (!validation.hasErrors()) {

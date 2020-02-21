@@ -1,7 +1,7 @@
 package com.javastudio.tutorial.service;
 
 import com.javastudio.tutorial.dao.ProductDao;
-import com.javastudio.tutorial.model.Product1;
+import com.javastudio.tutorial.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,13 +16,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public List<Product1> list() {
+    public List<Product> list() {
         return dao.list();
     }
 
     @Override
     @Transactional
-    public void add(Product1 product) {
+    public void add(Product product) {
         dao.add(product);
     }
 }

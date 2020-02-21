@@ -1,11 +1,11 @@
 package com.javastudio.tutorial.dao;
 
-import com.javastudio.tutorial.model.Product1;
+import com.javastudio.tutorial.model.Product;
 
 import java.util.List;
 
 public interface ProductDao {
-    List<Product1> list();
+    List<Product> list();
 
-    void add(Product1 product);
+    void add(Product product);
 }

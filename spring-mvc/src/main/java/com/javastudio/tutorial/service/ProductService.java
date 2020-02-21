@@ -1,12 +1,12 @@
 package com.javastudio.tutorial.service;
 
-import com.javastudio.tutorial.model.Product1;
+import com.javastudio.tutorial.model.Product;
 
 import java.util.List;
 
 public interface ProductService {
 
-    void add(Product1 product);
+    void add(Product product);
 
-    List<Product1> list();
+    List<Product> list();
 }
