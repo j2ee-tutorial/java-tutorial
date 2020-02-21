@@ -1,11 +1,10 @@
-package com.javastudio.tutorial.web.model;
+package com.javastudio.tutorial.model;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-public class Product {
-
+public class Product1 {
     private Long id;
 
     @NotNull
