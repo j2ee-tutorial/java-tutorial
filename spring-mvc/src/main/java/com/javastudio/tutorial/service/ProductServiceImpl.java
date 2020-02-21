@@ -15,7 +15,7 @@ public class ProductServiceImpl implements ProductService {
     ProductDao dao;
 
     @Override
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Product> list() {
         return dao.list();
     }

@@ -123,8 +123,6 @@
             <scope>test</scope>
         </dependency>
 
-
-
         <!-- Hibernate ORM -->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -151,6 +149,15 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate.validator}</version>
+        </dependency>
+
+        <!-- Oracle JDBC Driver -->
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc6</artifactId>
+            <version>11.2.0.4</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/lib/ojdbc6.jar</systemPath> <!-- must match file name -->
         </dependency>
     </dependencies>
 </project>
