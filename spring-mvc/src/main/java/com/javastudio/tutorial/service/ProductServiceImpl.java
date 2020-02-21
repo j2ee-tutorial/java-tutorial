@@ -4,6 +4,7 @@ import com.javastudio.tutorial.dao.ProductDao;
 import com.javastudio.tutorial.model.Product1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,11 +14,14 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     ProductDao dao;
 
+    @Override
+    @Transactional
     public List<Product1> list() {
         return dao.list();
     }
 
     @Override
+    @Transactional
     public void add(Product1 product) {
         dao.add(product);
     }
