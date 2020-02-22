@@ -8,7 +8,9 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -31,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-//    @Bean
+   //    @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.setBasename("classpath:i18n/messages");
@@ -67,17 +69,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(interceptor).addPathPatterns("/*");
     }
 
-    /*
-    @Bean
-    public InternalResourceViewResolver getViewResolver(){
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/jsp/");
-        viewResolver.setSuffix(".jsp");
-        return viewResolver;
-    }
-    */
-
-    /*
     @Bean("localeResolver")
     public LocaleResolver getLocaleResolver() {
         CookieLocaleResolver resolver = new CookieLocaleResolver();
@@ -85,5 +76,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
         resolver.setCookieMaxAge(60 * 60);
         return resolver;
     }
-    */
 }
