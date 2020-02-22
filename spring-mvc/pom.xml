@@ -22,6 +22,7 @@
         <spring.version>5.2.0.RELEASE</spring.version>
 
         <hibernate.version>5.2.11.Final</hibernate.version>
+        <!--<hibernate.version>4.1.9.Final</hibernate.version>-->
         <hibernate.validator>5.4.1.Final</hibernate.validator>
         <c3p0.version>0.9.5.2</c3p0.version>
     </properties>
@@ -142,6 +143,12 @@
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>${c3p0.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
 
         <!-- Hibernate Validator -->

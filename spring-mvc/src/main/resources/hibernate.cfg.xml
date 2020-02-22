@@ -5,10 +5,10 @@
 <hibernate-configuration>
     <session-factory>
 
-        <property name="connection.url">jdbc:oracle:thin:@10.10.10.13:1521:orcl</property>
+        <property name="connection.url">jdbc:oracle:thin:@dbebk.opr.dsa:1521:dbebk</property>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 
-        <property name="connection.username">ALI</property>
+        <property name="connection.username">hossein</property>
         <property name="connection.password">123456</property>
 
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
@@ -16,5 +16,11 @@
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- <mapping resource="hibernate.hbm.xml"/> -->
+
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
     </session-factory>
 </hibernate-configuration>

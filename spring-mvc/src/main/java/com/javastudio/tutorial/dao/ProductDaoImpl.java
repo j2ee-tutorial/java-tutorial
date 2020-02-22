@@ -15,11 +15,13 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public List<Product> list() {
+        logger.info("Getting list of products from dao");
         return products;
     }
 
     @Override
     public void add(Product product) {
+        logger.info("Saving a product in dao layer");
         products.add(product);
     }
 }
