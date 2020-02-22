@@ -15,12 +15,14 @@
 
         <!-- DB schema will be updated if needed -->
         <property name="hibernate.hbm2ddl.auto">update</property>
-        <!-- <mapping resource="hibernate.hbm.xml"/> -->
 
+        <!--https://stackoverflow.com/questions/10691486/spring-source-suite-spring3-hibernate4-maven-3-mysql-5-->
         <property name="hibernate.c3p0.min_size">5</property>
         <property name="hibernate.c3p0.max_size">20</property>
         <property name="hibernate.c3p0.timeout">300</property>
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <mapping resource="hibernate.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
