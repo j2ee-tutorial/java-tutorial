@@ -76,4 +76,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
         resolver.setCookieMaxAge(60 * 60);
         return resolver;
     }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+    }
 }

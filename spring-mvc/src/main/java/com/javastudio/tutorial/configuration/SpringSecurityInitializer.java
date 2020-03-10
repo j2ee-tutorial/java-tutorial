@@ -11,6 +11,6 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
  * and register the DelegatingFilterProxy to use the springSecurityFilterChain
  * before any other registered Filter. It also register a ContextLoaderListener.
  */
-public class SpringSecurityInitializer extends AbstractSecurityWebApplicationInitializer {
+public class SpringSecurityInitializer { // extends AbstractSecurityWebApplicationInitializer {
     //no code needed
 }
