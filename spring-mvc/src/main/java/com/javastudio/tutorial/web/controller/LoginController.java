@@ -30,7 +30,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String save(@RequestParam String username, @RequestParam String password, Model model) {
+    public String auth(@RequestParam String username, @RequestParam String password, Model model) {
         logger.info("username: " + username);
         logger.info("password: " + password);
         model.addAttribute("message", "You logged in successfully!");
