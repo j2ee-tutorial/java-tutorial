@@ -9,7 +9,10 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -19,7 +22,7 @@ import java.util.logging.Logger;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.javastudio.tutorial"})
+@ComponentScan(basePackages = {"com.javastudio.tutorial"})
 public class WebMvcConfig implements WebMvcConfigurer {
 
     private static final Logger logger = Logger.getLogger(WebMvcConfig.class.getName());
@@ -33,14 +36,14 @@ public class WebMvcConfig implements WebMvcConfigurer {
         return resolver;
     }
 
-   //    @Bean
+    //    @Bean
     public MessageSource messageSource() {
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.setBasename("classpath:i18n/messages");
         return source;
     }
 
-     @Bean("messageSource")
+    @Bean("messageSource")
     public MessageSource getMessageResource() {
         ReloadableResourceBundleMessageSource messageResource = new ReloadableResourceBundleMessageSource();
         messageResource.setBasename("classpath:i18n/messages");
